@@ -17,6 +17,10 @@ def calculate_coeff_var(data):
     mean_val = np.mean(data)
     return (calculate_std(data) / mean_val) * 100 if mean_val != 0 else None
 
+#Interquartile Range
+def cal_iqr(data):
+    return abs(np.percentile(data,25) - np.percentile(data,75))
+
 if __name__ == "__main__":
     # Get user input for uniform distribution parameters
     low = float(input("Enter the lower bound: "))
@@ -31,6 +35,7 @@ if __name__ == "__main__":
     std_x = calculate_std(x)
     var_x = calculate_var(x)
     covar_x = calculate_coeff_var(x)
+    iqr_x = cal_iqr(x)
 
     # Print results
     print("\nMeasures of Dispersion:")
@@ -38,3 +43,4 @@ if __name__ == "__main__":
     print("Standard Deviation:", std_x)
     print("Variance:", var_x)
     print("Coefficient of Variation:", covar_x)
+    print("Interquartile range", iqr_x)
