@@ -17,7 +17,7 @@ def calculate_coeff_var(data):
     mean_val = np.mean(data)
     return (calculate_std(data) / mean_val) * 100 if mean_val != 0 else None
 
-#Interquartile Range
+# Interquartile Range
 def cal_iqr(data):
     return abs(np.percentile(data,25) - np.percentile(data,75))
 
